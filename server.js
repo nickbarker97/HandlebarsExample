@@ -1,12 +1,19 @@
 var express = require('express');
 var app = express();
+var handlebars = require('express-handlebars');
 
+
+app.set('view engine','hbs');
+app.engine('hbs',handlebars({
+layoutDir: __dirname + '/views/layouts',
+extname: 'hbs'
+}));
 app.get('/', (req, res)=>{
-    res.send('This is the Home Page')
+    res.render('index', {layout: 'main'});
 });
 
 app.get('/about', (req, res)=>{
-    res.send('This is the About page')
+    res.render('about', {layout: 'main'});
 });
 
 app.get('/contact', (req, res)=>{
