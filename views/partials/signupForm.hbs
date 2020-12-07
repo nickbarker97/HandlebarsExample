@@ -1,0 +1,12 @@
+
+{{#if userExist}}
+<div class="card-panel red">User Already Exists</div>
+{{else}} {{#if userDoesNotExist}}
+<div class="card-panel green">Account has been Created</div>
+{{/if}}{{/if}}
+<form action="/signup" method="POST">
+    <input type="text" name="username" id="username" placeholder="Enter Username/Email">
+    <input type="password" name="password" id="password" placeholder="Enter Password">
+    <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password">
+    <input type="submit" name="submit" id="signUpSubmit" class="btn waves-effect waves-light">
+</form>
